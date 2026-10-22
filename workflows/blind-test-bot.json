@@ -1,0 +1,2915 @@
+{
+  "name": "Blind Test Bot",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.5,
+      "position": [
+        0,
+        848
+      ],
+      "id": "c5cf75db-158a-4d0d-9076-62e22b3be177",
+      "name": "Telegram Trigger",
+      "webhookId": "c5e0c63b-b6ee-4677-8856-c92be2b77419",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "=/playlist",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    },
+                    "id": "307ba63a-0e33-4435-bb4b-4c0ed2a998d8"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "1cea86bf-8ce4-4208-97ab-8b9c6c5eac6d",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "=/play",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "26e88a4a-fd24-413e-b510-79e2474fe531",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "=/score",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "c7259365-15e4-4038-b314-5802529105b9",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "=/help",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "30b3ee08-3678-400b-b168-ad80ebe48fc3",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "=/stop",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "cd47423a-fe9c-4aed-bf40-eb1c7ab542da",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "=/year",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "bb269350-a58e-4de7-9e31-c3a10ba34da2",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "=/skip",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "bf509d65-2639-4e72-81b0-20f1008bc1d1",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "=/mine",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "68817339-7a12-4bf0-912e-a925013363a7",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/who",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "20d893ff-877b-484b-91d3-efb570819e5b",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/start",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "b322df2c-7fa2-4166-a5ac-98b60a301554",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/menu",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        160,
+        784
+      ],
+      "id": "72f5c0ad-eaaa-4412-8b96-3f98a2e4a358",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "={{ \"🎧 Blind test bot\\n\\n🎮 Game modes\\n/play – guess the title\\n/year – guess the release year\\n/who – guess whose playlist it is\\n\\n⚙️ Setup\\n/playlist <spotify link> – choose the group playlist\\n/mine <spotify link> – add your own playlist (for /who)\\n\\n🕹️ During a game\\n/skip – reveal the answer\\n/score – scores for this game\\n/stop – end the game\\n\\nThen just type your guess!\" }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        2048
+      ],
+      "id": "6e582a2a-6239-4888-9dcc-15323672e3c5",
+      "name": "Help Message",
+      "webhookId": "84ef9232-6041-4c15-8cf4-6d60f5047ee9",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "706a1145-9d2e-4e32-937c-e9680ed7567a",
+              "leftValue": "={{ $json.found }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2768,
+        32
+      ],
+      "id": "1e30ae7e-1704-4ef8-9bbd-a4193ecae085",
+      "name": "Has Preview?"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "😕 Couldn't find a playable song, send /play to try again",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3248,
+        96
+      ],
+      "id": "1d7af54d-d3f9-4422-800e-ea92d01af3a8",
+      "name": "No Clip Message",
+      "webhookId": "700854ed-0a1e-4dc8-ae11-ade2121582c8",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "games",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+            "answer": "={{ $('Get Playable Song').first().json.answer }}",
+            "title": "={{ $('Get Playable Song').first().json.title }}",
+            "artist": "={{ $('Get Playable Song').first().json.artist }}",
+            "status": "playing",
+            "mode": "={{ $('Pick Playlist').first().json.mode }}",
+            "year": "={{ $('Get Playable Song').first().json.year }}",
+            "game_id": "={{ /^\\/(play|year|who)/.test($('Telegram Trigger').first().json.message.text || '') ? $now.toMillis() : ($('Check Guess').isExecuted ? $('Check Guess').first().json.game_id : $now.toMillis()) }}",
+            "played": "={{ (/^\\/(play|year|who)/.test($('Telegram Trigger').first().json.message.text || '') || !$('Check Guess').isExecuted ? '' : ($('Check Guess').first().json.played || '')) + '|' + $('Get Playable Song').first().json.title }}",
+            "owner": "={{ $('Pick Playlist').first().json.owner }}",
+            "cover": "={{ $('Get Playable Song').first().json.cover }}"
+          },
+          "matchingColumns": [
+            "chat_id"
+          ],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "artist",
+              "displayName": "artist",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "mode",
+              "displayName": "mode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "year",
+              "displayName": "year",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "game_id",
+              "displayName": "game_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "played",
+              "displayName": "played",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "owner",
+              "displayName": "owner",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "cover",
+              "displayName": "cover",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3024,
+        -80
+      ],
+      "id": "3eb608d4-2e9d-49c6-aa7b-dd135551158d",
+      "name": "Save Answer",
+      "retryOnFail": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "games",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "chat_id",
+              "lookupValue": "={{ $('Telegram Trigger').first().json.message.chat.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1440,
+        976
+      ],
+      "id": "ec761828-c609-4f92-96a8-0ba6f10065e3",
+      "name": "Read Round",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "a48bc6d2-49ea-4fab-abdb-bf7629db13da",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "playing",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1600,
+        976
+      ],
+      "id": "3bbae76d-622e-437c-a274-5c88f668f8a7",
+      "name": "Round Running?"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "🎶 No round running, send /play to start!",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2048,
+        1072
+      ],
+      "id": "b52b8f80-e38a-4ce0-924a-cd9b68f79d11",
+      "name": "No Round Message",
+      "webhookId": "ee0281bb-56a2-48e9-afbd-12fd28183590",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const clean = s => String(s || '').toLowerCase()\n  .normalize('NFD').replace(/[\\u0300-\\u036f]/g, '')\n  .replace(/\\s*[\\(\\[].*?[\\)\\]]/g, '')\n  .replace(/[^a-z0-9 ]/g, '')\n  .replace(/\\s+/g, ' ').trim();\nconst lev = (a, b) => {\n  const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);\n  for (let j = 1; j <= b.length; j++) d[0][j] = j;\n  for (let i = 1; i <= a.length; i++)\n    for (let j = 1; j <= b.length; j++)\n      d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1));\n  return d[a.length][b.length];\n};\n\nconst round = $input.first().json;\nconst text = $('Telegram Trigger').first().json.message.text || '';\nconst mode = round.mode || 'classic';\nconst song = `${round.title} – ${round.artist}`;\nconst skip = text.startsWith('/skip');\n\n// 🕵️ WHO MODE\nif (mode === 'who') {\n  const g = clean(text), o = clean(round.owner);\n  const sim = o.length && g.length ? 1 - lev(g, o) / Math.max(g.length, o.length) : 0;\n  const ok = !skip && g.length >= 2 && (g === o || o.includes(g) || g.includes(o) || sim >= 0.75);\n  return [{ json: { ...round, skip, mode, guess: g, similarity: 0, ok, points: 1, answer_text: `${round.owner}'s playlist 🎧 ${song}` } }];\n}\n\n// 📅 YEAR MODE\nif (mode === 'year') {\n  const m = text.match(/\\b(19|20)\\d{2}\\b/);\n  const guessYear = m ? Number(m[0]) : null;\n  const year = Number(round.year);\n  const diff = guessYear && year ? Math.abs(guessYear - year) : 99;\n  const points = skip ? 0 : diff === 0 ? 3 : diff <= 2 ? 2 : diff <= 5 ? 1 : 0;\n  return [{ json: { ...round, skip, mode, guess: guessYear, similarity: 0, ok: points > 0, points, answer_text: `${year} · ${song}` } }];\n}\n\n// 🎧 CLASSIC MODE\nconst guess = clean(text);\nconst answer = clean(round.answer);\nconst similarity = skip || !answer.length ? 0 : 1 - lev(guess, answer) / Math.max(guess.length, answer.length);\nconst exact = !skip && guess.length >= 3 && (guess === answer || answer.includes(guess) || guess.includes(answer));\nconst ok = exact || similarity >= 0.8;\nreturn [{ json: { ...round, skip, mode, guess, similarity: Math.round(similarity * 100), ok, points: 1, answer_text: song } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1792,
+        848
+      ],
+      "id": "ef16809b-a98e-4682-a8ff-b56477b94d27",
+      "name": "Check Guess"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "bb3943f3-688b-4404-84d1-7b1e7a042c50",
+              "leftValue": "={{ $('Parse AI').isExecuted ? $('Parse AI').first().json.ok : $('Check Guess').first().json.ok }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2656,
+        864
+      ],
+      "id": "88274a55-6f20-4ad5-bbd4-c8d995a06f00",
+      "name": "Correct?"
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "file": "={{ $('Check Guess').first().json.cover }}",
+        "additionalFields": {
+          "caption": "=YOUHOU Bravo! +{{ $('Check Guess').first().json.points }} pt{{ $('Check Guess').first().json.points > 1 ? 's' : '' }} – it was {{ $('Check Guess').first().json.answer_text }}"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3104,
+        672
+      ],
+      "id": "27933f6e-b3f0-4642-a135-86f5b520110d",
+      "name": "Bravo Message",
+      "webhookId": "355e49a2-882b-4e67-b6c2-7299fa8a22d1",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "file": "={{ $('Check Guess').first().json.cover }}",
+        "additionalFields": {
+          "caption": "={{ $('Check Guess').first().json.skip ? '⏭️ Skipped! It was ' : '❌ BOOHOO False! It was ' }}{{ $('Check Guess').first().json.answer_text }}"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3280,
+        912
+      ],
+      "id": "82d80f17-f13a-4908-aef0-c2f790d3575f",
+      "name": "Wrong Message",
+      "webhookId": "15ceecdb-02ec-41e2-9dcf-7cc86f580c85",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "games",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+            "status": "stopped"
+          },
+          "matchingColumns": [
+            "chat_id"
+          ],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "artist",
+              "displayName": "artist",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "mode",
+              "displayName": "mode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1360,
+        1568
+      ],
+      "id": "8488d820-9934-4528-ba62-1585fed17ac3",
+      "name": "stop game",
+      "retryOnFail": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "games",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+            "status": "done"
+          },
+          "matchingColumns": [
+            "chat_id"
+          ],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "artist",
+              "displayName": "artist",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "mode",
+              "displayName": "mode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2800,
+        672
+      ],
+      "id": "c38eed0a-dbbb-4588-b6fa-84a8e9315c6b",
+      "name": "Close Round",
+      "retryOnFail": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 710926215,
+          "mode": "list",
+          "cachedResultName": "scores",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=710926215"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+            "user": "={{ $('Telegram Trigger').first().json.message.from.first_name }}",
+            "date": "={{ $now.toISO() }}",
+            "points": "={{ $('Check Guess').first().json.points }}",
+            "game_id": "={{ $('Check Guess').first().json.game_id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "user",
+              "displayName": "user",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "points",
+              "displayName": "points",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "game_id",
+              "displayName": "game_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2944,
+        672
+      ],
+      "id": "9a976557-9cff-46ed-8c51-34fcd7ea1f63",
+      "name": "Save Point",
+      "retryOnFail": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 710926215,
+          "mode": "list",
+          "cachedResultName": "scores",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=710926215"
+        },
+        "filtersUI": {
+          "values": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1696,
+        1456
+      ],
+      "id": "10674d29-741f-44bc-95dd-321424872e18",
+      "name": "Read Scores",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const chat = String($('Telegram Trigger').first().json.message.chat.id);\nconst game = $('Read Game').all().filter(i => String(i.json.chat_id) === chat).pop();\nconst gameId = game ? String(game.json.game_id || '') : '';\nconst isStop = ($('Telegram Trigger').first().json.message.text || '').startsWith('/stop');\n\nconst counts = {};\nfor (const i of $input.all()) {\n  if (String(i.json.chat_id) !== chat) continue;\n  if (!gameId || String(i.json.game_id) !== gameId) continue;\n  const u = i.json.user;\n  if (u) counts[u] = (counts[u] || 0) + (Number(i.json.points) || 1);\n}\n\nconst medals = ['🥇', '🥈', '🥉'];\nconst lines = Object.entries(counts)\n  .sort((a, b) => b[1] - a[1])\n  .map(([u, n], i) => `${medals[i] || '▫️'} ${u}: ${n} pt${n > 1 ? 's' : ''}`);\n\nconst title = isStop ? '🏁 Game over! Final scores' : '🏆 Scores for this game';\nconst text = lines.length\n  ? `${title}\\n\\n${lines.join('\\n')}`\n  : (isStop ? '🏁 Game over! Nobody scored this time 😅' : 'No points yet in this game, keep guessing! 🎶');\nreturn [{ json: { text } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1856,
+        1456
+      ],
+      "id": "b37bebc5-a798-44c1-8e81-6d02f24240e4",
+      "name": "Leaderboard"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "={{ $json.text }}",
+        "replyMarkup": "replyKeyboard",
+        "replyKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/play 🎧 Guess the title",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "/year 📅 Guess the year",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/who 🕵️ Whose playlist?",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "/help ❓ How to play",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "replyKeyboardOptions": {
+          "resize_keyboard": true,
+          "one_time_keyboard": true
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2000,
+        1456
+      ],
+      "id": "a698bcae-05c0-48f0-aab9-146f1dcac367",
+      "name": "Send Score",
+      "webhookId": "57420934-e7df-43eb-b1e6-aba4cbf3dedd",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "ZTo2K73LF48M8JlD",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/ZTo2K73LF48M8JlD",
+          "cachedResultName": "Get Playable Song"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "playlist_id": "={{ $('Pick Playlist').first().json.playlist_id }}",
+            "exclude": "={{ $('Check Guess').isExecuted ? ($('Check Guess').first().json.played || '') : '' }}"
+          },
+          "matchingColumns": [
+            "playlist_id"
+          ],
+          "schema": [
+            {
+              "id": "playlist_id",
+              "displayName": "playlist_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "exclude",
+              "displayName": "exclude",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.4,
+      "position": [
+        2528,
+        32
+      ],
+      "id": "bd94a622-f4f2-46c6-aacc-3fe6d455582e",
+      "name": "Get Playable Song",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "sendAudio",
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "file": "={{ $('Get Playable Song').first().json.preview }}",
+        "additionalFields": {
+          "caption": "={{ { year: '📅 Guess the release year!', who: '🕵️ Whose playlist is this from?' }[$('Pick Playlist').first().json.mode] || '🎧 Guess the song!' }}",
+          "title": "Mystery song 🎵"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3312,
+        -80
+      ],
+      "id": "4208b383-cd5b-4097-9173-d88bbf57fa17",
+      "name": "send clip",
+      "webhookId": "d29c0bf5-4907-45fc-916d-a4840eecaaea",
+      "retryOnFail": true,
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "⚠️ Oops, something went wrong getting a song. Send /play to try again!",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2768,
+        224
+      ],
+      "id": "7ccb77ba-cb30-4634-a835-6ddd152e10da",
+      "name": "Error Message",
+      "webhookId": "88104c92-1f7e-4a97-bedb-a7a1a5b86c68",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "13e24cce-fa71-4276-8c20-b508d63cc03f",
+              "leftValue": "={{ $json.ok }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "aeb51258-c207-4502-aed6-9b9f23cb9ec2",
+              "leftValue": "={{ $json.similarity }}",
+              "rightValue": 40,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1968,
+        848
+      ],
+      "id": "85398203-0797-4239-8a78-d2581dd5600a",
+      "name": "Ask AI?"
+    },
+    {
+      "parameters": {
+        "model": "google/gemma-4-26b-a4b-it:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1904,
+        720
+      ],
+      "id": "a49b6928-41e1-4d45-9169-3140318dfea7",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "GmHZBPcxcS08ScIn",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are the judge of a music blind test.\nCorrect song title: \"{{ $('Check Guess').first().json.title }}\" by {{ $('Check Guess').first().json.artist }}\nPlayer's guess: \"{{ $('Telegram Trigger').first().json.message.text }}\"\n\nIs the guess the same song title? Accept typos, missing small words, abbreviations, numbers written differently, or the title translated into another language. Guessing only the artist is NOT correct.\n\nAnswer with only this JSON and nothing else: {\"correct\": true} or {\"correct\": false}",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        2128,
+        688
+      ],
+      "id": "916a83a1-240e-4e47-acb0-244dbf9bc7bc",
+      "name": "AI Judge",
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = String($input.first().json.text || '');\nconst m = raw.match(/\"correct\"\\s*:\\s*(true|false)/i);\n// if the AI fails or answers weirdly → count as wrong\nreturn [{ json: { ok: m ? m[1].toLowerCase() === 'true' : false, ai_raw: raw } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2432,
+        688
+      ],
+      "id": "6347eec4-bdd8-4150-a5e2-bf650043e276",
+      "name": "Parse AI"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9f18a0c2-528c-4543-b1ab-68d93fa5c083",
+              "name": "playlist_id",
+              "value": "={{ $json.message.text.match(/playlist\\/([A-Za-z0-9]+)/)?.[1] || '' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        1248,
+        2064
+      ],
+      "id": "df5094e4-5a27-4860-b552-283b0b1d6614",
+      "name": "Extract Playlist ID"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "54346380-667f-4189-83bd-f3706bd3398e",
+              "leftValue": "={{ $json.playlist_id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1472,
+        2064
+      ],
+      "id": "3d8af018-35bd-4d1d-b82f-7450c9962ed0",
+      "name": "Valid Link?"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "= {{ \"🔗 Send a Spotify playlist link like this:\\n/playlist https://open.spotify.com/playlist/...\" }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2352,
+        2160
+      ],
+      "id": "dd9dd18e-f831-412d-9aa4-d53c1293a55a",
+      "name": "Bad Link Message",
+      "webhookId": "059e024e-a6fe-4b70-abe4-8d64f2766695",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 40772712,
+          "mode": "list",
+          "cachedResultName": "settings",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=40772712"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+            "playlist_id": "={{ $('Extract Playlist ID').first().json.playlist_id }}"
+          },
+          "matchingColumns": [
+            "chat_id"
+          ],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "playlist_id",
+              "displayName": "playlist_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1664,
+        1952
+      ],
+      "id": "5ce17bee-f669-48a2-8c8e-bda7f5b5a3c4",
+      "name": "Save Playlist",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "🎶 Playlist saved! Send /play to start",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1824,
+        1952
+      ],
+      "id": "e8bc53bf-34be-43da-ad4a-47c37c29403b",
+      "name": "Playlist Saved Message",
+      "webhookId": "dee516a9-9824-4ae4-9ff4-24d181fd1def",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 40772712,
+          "mode": "list",
+          "cachedResultName": "settings",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=40772712"
+        },
+        "filtersUI": {
+          "values": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1664,
+        80
+      ],
+      "id": "76df7020-3ab7-4370-bb9e-5bd10e5d8be6",
+      "name": "Read Settings",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const tg = $('Telegram Trigger').first().json.message;\nconst chat = String(tg.chat.id);\nconst text = tg.text || '';\nconst DEFAULT = '3MOKTx8faxQ1SXhfuu1Eho';\nconst MIN_PLAYERS = 2;   // set to 1 to test alone\n\n// which mode?\nlet mode;\nif (text.startsWith('/year')) mode = 'year';\nelse if (text.startsWith('/play')) mode = 'classic';\nelse if (text.startsWith('/who')) mode = 'who';\nelse mode = $('Check Guess').isExecuted ? ($('Check Guess').first().json.mode || 'classic') : 'classic';\n\n// 🕵️ WHO MODE → random player's playlist\nif (mode === 'who') {\n  const players = $('Read Players').all().map(i => i.json)\n    .filter(p => String(p.chat_id) === chat && p.playlist_id);\n  if (players.length < MIN_PLAYERS) {\n    return [{ json: { mode, error: `Need at least ${MIN_PLAYERS} players 🕵️ Each player sends /mine <spotify playlist link>` } }];\n  }\n  const p = players[Math.floor(Math.random() * players.length)];\n  return [{ json: { mode, playlist_id: p.playlist_id, owner: p.user, error: '' } }];\n}\n\n// 🎧 / 📅 → this chat's playlist\nconst row = $('Read Settings').all().filter(i => String(i.json.chat_id) === chat).pop();\nreturn [{ json: { mode, playlist_id: (row && row.json.playlist_id) || DEFAULT, owner: '', error: '' } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2000,
+        80
+      ],
+      "id": "fbeea7f5-bb4b-4fab-bede-dda17c2f136b",
+      "name": "Pick Playlist"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "games",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1552,
+        1456
+      ],
+      "id": "e3c029cf-4c46-492e-80b7-2317848c30ef",
+      "name": "Read Game",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "games",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+            "status": "done"
+          },
+          "matchingColumns": [
+            "chat_id"
+          ],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "answer",
+              "displayName": "answer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "artist",
+              "displayName": "artist",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "mode",
+              "displayName": "mode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        3088,
+        912
+      ],
+      "id": "6c16e87a-07b6-46dd-9fd9-0e35e53b1632",
+      "name": "Close Round (Reveal)",
+      "retryOnFail": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "d7d9aeb4-017f-47b1-89b0-1a1e665321b4",
+              "leftValue": "={{ $('Check Guess').first().json.mode === 'year' || $('Check Guess').first().json.skip }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2896,
+        992
+      ],
+      "id": "fe796edf-cbb5-4099-a366-cbe4724452c0",
+      "name": "End Round?"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "❌ AHH nope, try again! (or /skip)",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3408,
+        1088
+      ],
+      "id": "4fb7b321-a529-43f9-b2fe-f9caf0c2cc0d",
+      "name": "Try Again Message",
+      "webhookId": "2f450b63-e4a6-4fb6-8f7e-e325b4e2bfca",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "1803772c-0f11-431c-9a65-35b21ce5b365",
+              "leftValue": "={{ $('Telegram Trigger').first().json.message.chat.type }}",
+              "rightValue": "private",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1808,
+        1088
+      ],
+      "id": "5e2d83ca-5b17-43e0-a332-f859ef98cec4",
+      "name": "Private Chat?"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "1803772c-0f11-431c-9a65-35b21ce5b365",
+              "leftValue": "={{ $('Telegram Trigger').first().json.message.chat.type }}",
+              "rightValue": "private",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        3088,
+        1104
+      ],
+      "id": "ae126d40-f0a3-4e74-a9f1-43f8ffe18309",
+      "name": "Private Chat?1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "40a764cd-a2bf-42fa-91c4-16d921b72391",
+              "name": "playlist_id",
+              "value": "={{ $json.message.text.match(/playlist\\/([A-Za-z0-9]+)/)?.[1] || '' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        1248,
+        2272
+      ],
+      "id": "58cbc4c9-9d41-49a4-a044-d628a41e1fbf",
+      "name": "Extract Mine ID"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "a8a3ff0e-0ec9-44a6-bb79-8e77bdc37e62",
+              "leftValue": "={{ $json.playlist_id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1488,
+        2272
+      ],
+      "id": "6f44ff39-8e12-4fc2-88bf-b2581d11fe4c",
+      "name": "Valid Mine Link?"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1846738713,
+          "mode": "list",
+          "cachedResultName": "players",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=1846738713"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "key": "={{ $('Telegram Trigger').first().json.message.chat.id + '_' + $('Telegram Trigger').first().json.message.from.id }}",
+            "chat_id": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+            "user_id": "={{ $('Telegram Trigger').first().json.message.from.id }}",
+            "user": "={{ $('Telegram Trigger').first().json.message.from.first_name }}",
+            "playlist_id": "={{ $('Extract Mine ID').first().json.playlist_id }}"
+          },
+          "matchingColumns": [
+            "key"
+          ],
+          "schema": [
+            {
+              "id": "key",
+              "displayName": "key",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "user",
+              "displayName": "user",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "playlist_id",
+              "displayName": "playlist_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1664,
+        2128
+      ],
+      "id": "38f30258-5561-422f-be46-085c18747495",
+      "name": "Save Player",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "=✅ {{ $('Telegram Trigger').first().json.message.from.first_name }}'s playlist is in! When at least 2 people have added theirs, send /who 🕵️",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1824,
+        2128
+      ],
+      "id": "79d95a6f-8698-40c5-b179-31ff9ce343b3",
+      "name": "Player Saved Message",
+      "webhookId": "39fff550-ea79-444b-ac7f-72b14279dc6c",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak",
+          "mode": "list",
+          "cachedResultName": "Blind Test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1846738713,
+          "mode": "list",
+          "cachedResultName": "players",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EngVmQloRabhOXfTzUx4VkCsilK4nY46SnokAJCScak/edit#gid=1846738713"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1840,
+        80
+      ],
+      "id": "012525ef-a8b0-4573-a62b-dd58cb7ab35c",
+      "name": "Read Players",
+      "alwaysOutputData": true,
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "tzSfe96VDYLSZUvR",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "267ee574-ce9b-49c1-84df-d33aa66a0477",
+              "leftValue": "={{ $json.error }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2160,
+        80
+      ],
+      "id": "c9526ecd-65a6-48c3-82a2-846f39e27143",
+      "name": "Enough Players?"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "={{ $json.error }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2528,
+        224
+      ],
+      "id": "5c358406-64ce-4f0d-8896-41a1fdc69d46",
+      "name": "Not Enough Players",
+      "webhookId": "c0248122-f02f-44f8-a51f-ab9f4759cedd",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "={{ \"🎧 Welcome to BlindBeat!\\n\\nI play a 30-second clip, you guess. First right answer wins the point.\\n\\n👇 Pick a game:\" }}",
+        "replyMarkup": "replyKeyboard",
+        "replyKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/play 🎧 Guess the title",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "/year 📅 Guess the year",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "/who 🕵️ Whose playlist?",
+                    "additionalFields": {}
+                  },
+                  {
+                    "text": "/help ❓ How to play",
+                    "additionalFields": {}
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "replyKeyboardOptions": {
+          "resize_keyboard": true,
+          "one_time_keyboard": true
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        2256
+      ],
+      "id": "22218b89-af14-4424-86ed-22ed4241a4d6",
+      "name": "Welcome Menu",
+      "webhookId": "f3b9d4fe-ee7d-406e-8592-cd7d42402208",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "=   YOUHOU Bravo! +{{ $('Check Guess').first().json.points }} pt{{ $('Check Guess').first().json.points > 1 ? 's' : '' }} – it was {{ $('Check Guess').first().json.answer_text }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3376,
+        688
+      ],
+      "id": "319111a3-9165-40a4-b333-98f2a6bb4427",
+      "name": "Bravo (no cover)",
+      "webhookId": "de419052-3f69-4312-8d16-1008cd28c13b",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "={{ $('Check Guess').first().json.skip ? '⏭️ Skipped! It was ' : '❌ BOOHOO False! It was ' }}{{ $('Check Guess').first().json.answer_text }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3712,
+        928
+      ],
+      "id": "d12030cd-167d-49c3-8ede-a61c188747d1",
+      "name": "Wrong (no cover)",
+      "webhookId": "bb686518-53c3-40b9-92b7-f0002f6f652d",
+      "credentials": {
+        "telegramApi": {
+          "id": "yuUjYxlRyDvq3shV",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# ENTRY\n\n### - Every Telegram message lands here.\n### - The Switch routes 11 commands; anything else = a guess.",
+        "height": 624,
+        "width": 496,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -48,
+        640
+      ],
+      "typeVersion": 1,
+      "id": "fc437f10-0e54-490e-9fa1-c8b423c6f2dd",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# START A GAME\n\n### - Picks the mode + playlist, then the sub-workflow finds a song with a Deezer clip (3 tries).\n### - Saves the round in Sheets and sends the clip.",
+        "height": 528,
+        "width": 1904,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1632,
+        -144
+      ],
+      "typeVersion": 1,
+      "id": "e8650f8c-c8f8-440f-be8c-9fea6fcf052a",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# CHECK A GUESS\n\n### - Reads the round, checks the answer in code (typos OK).\n### - when unsure? → AI judge. Right → point + cover + next song. Wrong → try again (silent in groups).",
+        "height": 688,
+        "width": 2608,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1296,
+        576
+      ],
+      "typeVersion": 1,
+      "id": "52c488c4-de3b-4286-a377-210f03f34fa0",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "# SCORES\n\n### - /score and /stop: adds up points for the current game only.\n### - /stop also ends the round.",
+        "height": 368,
+        "width": 896,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1312,
+        1360
+      ],
+      "typeVersion": 1,
+      "id": "eecaee52-e7d0-4bfb-bfc6-a545af2403a0",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# SETUP\n\n### - /playlist = group playlist · /mine = your playlist for /who\n### - /start + /help = menu and instructions. Bad links → usage message.",
+        "height": 640,
+        "width": 1984,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        560,
+        1808
+      ],
+      "typeVersion": 1,
+      "id": "19baff9a-8607-4c29-ac7b-b4cad133a76a",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "### AI judge only runs for 40–80% similar guesses → most guesses cost 0 AI calls.",
+        "height": 80,
+        "width": 352
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2080,
+        592
+      ],
+      "typeVersion": 1,
+      "id": "95c42c77-2a41-44d3-b7b9-81c5edb2d497",
+      "name": "Sticky Note5"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Extract Playlist ID",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Read Settings",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Read Game",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Help Message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "stop game",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Read Settings",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Read Round",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract Mine ID",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Read Settings",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Welcome Menu",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Welcome Menu",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Read Round",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Preview?": {
+      "main": [
+        [
+          {
+            "node": "Save Answer",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Clip Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Answer": {
+      "main": [
+        [
+          {
+            "node": "send clip",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Round": {
+      "main": [
+        [
+          {
+            "node": "Round Running?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Round Running?": {
+      "main": [
+        [
+          {
+            "node": "Check Guess",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Private Chat?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Guess": {
+      "main": [
+        [
+          {
+            "node": "Ask AI?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Correct?": {
+      "main": [
+        [
+          {
+            "node": "Close Round",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "End Round?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bravo Message": {
+      "main": [
+        [
+          {
+            "node": "Read Settings",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Bravo (no cover)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrong Message": {
+      "main": [
+        [
+          {
+            "node": "Read Settings",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wrong (no cover)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "stop game": {
+      "main": [
+        [
+          {
+            "node": "Read Game",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Close Round": {
+      "main": [
+        [
+          {
+            "node": "Save Point",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Point": {
+      "main": [
+        [
+          {
+            "node": "Bravo Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Scores": {
+      "main": [
+        [
+          {
+            "node": "Leaderboard",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leaderboard": {
+      "main": [
+        [
+          {
+            "node": "Send Score",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Playable Song": {
+      "main": [
+        [
+          {
+            "node": "Has Preview?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask AI?": {
+      "main": [
+        [
+          {
+            "node": "AI Judge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Correct?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Judge",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Judge": {
+      "main": [
+        [
+          {
+            "node": "Parse AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse AI": {
+      "main": [
+        [
+          {
+            "node": "Correct?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Playlist ID": {
+      "main": [
+        [
+          {
+            "node": "Valid Link?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Valid Link?": {
+      "main": [
+        [
+          {
+            "node": "Save Playlist",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Bad Link Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Playlist": {
+      "main": [
+        [
+          {
+            "node": "Playlist Saved Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Settings": {
+      "main": [
+        [
+          {
+            "node": "Read Players",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick Playlist": {
+      "main": [
+        [
+          {
+            "node": "Enough Players?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Game": {
+      "main": [
+        [
+          {
+            "node": "Read Scores",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "End Round?": {
+      "main": [
+        [
+          {
+            "node": "Close Round (Reveal)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Private Chat?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Close Round (Reveal)": {
+      "main": [
+        [
+          {
+            "node": "Wrong Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Private Chat?": {
+      "main": [
+        [
+          {
+            "node": "No Round Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Private Chat?1": {
+      "main": [
+        [
+          {
+            "node": "Try Again Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Mine ID": {
+      "main": [
+        [
+          {
+            "node": "Valid Mine Link?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Valid Mine Link?": {
+      "main": [
+        [
+          {
+            "node": "Save Player",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Bad Link Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Player": {
+      "main": [
+        [
+          {
+            "node": "Player Saved Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Players": {
+      "main": [
+        [
+          {
+            "node": "Pick Playlist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enough Players?": {
+      "main": [
+        [
+          {
+            "node": "Get Playable Song",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Not Enough Players",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bravo (no cover)": {
+      "main": [
+        [
+          {
+            "node": "Read Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrong (no cover)": {
+      "main": [
+        [
+          {
+            "node": "Read Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "errorWorkflow": "TH5TcQ8XMO4OM3sf",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "9bca971e-0e01-4904-bf8b-c6ba2b0ccd1f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e925afa9d9db6fe238199051f8b87083607cbe5fa9963d6149ea8bddca566c2e"
+  },
+  "nodeGroups": [],
+  "id": "Xj4IqhyiPvZVhVxv",
+  "tags": []
+}
