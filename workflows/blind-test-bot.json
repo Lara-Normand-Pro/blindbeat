@@ -17,6 +17,7 @@
       "id": "c5cf75db-158a-4d0d-9076-62e22b3be177",
       "name": "Telegram Trigger",
       "webhookId": "c5e0c63b-b6ee-4677-8856-c92be2b77419",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -302,6 +303,7 @@
       "id": "6e582a2a-6239-4888-9dcc-15323672e3c5",
       "name": "Help Message",
       "webhookId": "84ef9232-6041-4c15-8cf4-6d60f5047ee9",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -361,6 +363,7 @@
       "id": "1d7af54d-d3f9-4422-800e-ea92d01af3a8",
       "name": "No Clip Message",
       "webhookId": "700854ed-0a1e-4dc8-ae11-ade2121582c8",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -629,6 +632,7 @@
       "id": "b52b8f80-e38a-4ce0-924a-cd9b68f79d11",
       "name": "No Round Message",
       "webhookId": "ee0281bb-56a2-48e9-afbd-12fd28183590",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -702,6 +706,7 @@
       "id": "27933f6e-b3f0-4642-a135-86f5b520110d",
       "name": "Bravo Message",
       "webhookId": "355e49a2-882b-4e67-b6c2-7299fa8a22d1",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -728,6 +733,7 @@
       "id": "82d80f17-f13a-4908-aef0-c2f790d3575f",
       "name": "Wrong Message",
       "webhookId": "15ceecdb-02ec-41e2-9dcf-7cc86f580c85",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -1158,6 +1164,7 @@
       "id": "a698bcae-05c0-48f0-aab9-146f1dcac367",
       "name": "Send Score",
       "webhookId": "57420934-e7df-43eb-b1e6-aba4cbf3dedd",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -1264,6 +1271,7 @@
       "id": "7ccb77ba-cb30-4634-a835-6ddd152e10da",
       "name": "Error Message",
       "webhookId": "88104c92-1f7e-4a97-bedb-a7a1a5b86c68",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -1439,6 +1447,7 @@
       "id": "dd9dd18e-f831-412d-9aa4-d53c1293a55a",
       "name": "Bad Link Message",
       "webhookId": "059e024e-a6fe-4b70-abe4-8d64f2766695",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -1507,6 +1516,7 @@
       ],
       "id": "5ce17bee-f669-48a2-8c8e-bda7f5b5a3c4",
       "name": "Save Playlist",
+      "retryOnFail": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "tzSfe96VDYLSZUvR",
@@ -1531,6 +1541,7 @@
       "id": "e8bc53bf-34be-43da-ad4a-47c37c29403b",
       "name": "Playlist Saved Message",
       "webhookId": "dee516a9-9824-4ae4-9ff4-24d181fd1def",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -1568,6 +1579,7 @@
       "id": "76df7020-3ab7-4370-bb9e-5bd10e5d8be6",
       "name": "Read Settings",
       "alwaysOutputData": true,
+      "retryOnFail": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "tzSfe96VDYLSZUvR",
@@ -1782,6 +1794,7 @@
       "id": "4fb7b321-a529-43f9-b2fe-f9caf0c2cc0d",
       "name": "Try Again Message",
       "webhookId": "2f450b63-e4a6-4fb6-8f7e-e325b4e2bfca",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -2002,6 +2015,7 @@
       ],
       "id": "38f30258-5561-422f-be46-085c18747495",
       "name": "Save Player",
+      "retryOnFail": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "tzSfe96VDYLSZUvR",
@@ -2026,6 +2040,7 @@
       "id": "79d95a6f-8698-40c5-b179-31ff9ce343b3",
       "name": "Player Saved Message",
       "webhookId": "39fff550-ea79-444b-ac7f-72b14279dc6c",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -2061,6 +2076,7 @@
       "name": "Read Players",
       "alwaysOutputData": true,
       "executeOnce": true,
+      "retryOnFail": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "tzSfe96VDYLSZUvR",
@@ -2119,6 +2135,7 @@
       "id": "5c358406-64ce-4f0d-8896-41a1fdc69d46",
       "name": "Not Enough Players",
       "webhookId": "c0248122-f02f-44f8-a51f-ab9f4759cedd",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -2180,6 +2197,7 @@
       "id": "22218b89-af14-4424-86ed-22ed4241a4d6",
       "name": "Welcome Menu",
       "webhookId": "f3b9d4fe-ee7d-406e-8592-cd7d42402208",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -2204,6 +2222,7 @@
       "id": "319111a3-9165-40a4-b333-98f2a6bb4427",
       "name": "Bravo (no cover)",
       "webhookId": "de419052-3f69-4312-8d16-1008cd28c13b",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -2228,6 +2247,7 @@
       "id": "d12030cd-167d-49c3-8ede-a61c188747d1",
       "name": "Wrong (no cover)",
       "webhookId": "bb686518-53c3-40b9-92b7-f0002f6f652d",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -2904,7 +2924,7 @@
     "callerPolicy": "workflowsFromSameOwner",
     "availableInMCP": false
   },
-  "versionId": "9bca971e-0e01-4904-bf8b-c6ba2b0ccd1f",
+  "versionId": "ffdc122b-be04-4ab3-8a3c-339d4fcd3a96",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "e925afa9d9db6fe238199051f8b87083607cbe5fa9963d6149ea8bddca566c2e"
