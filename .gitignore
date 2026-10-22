@@ -1,0 +1,12 @@
+# Secrets
+.env
+
+# Local Docker data (if bind mounts are ever used)
+n8n_data/
+db_data/
+.n8n/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
