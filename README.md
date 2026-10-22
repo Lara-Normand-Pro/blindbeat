@@ -1,4 +1,4 @@
-# BlindBeat 🎵
+# BlindBeat 
 
 A Telegram blind-test bot built with n8n. Send it a Spotify playlist: it plays 30-second clips (via Deezer), checks guesses and keeps score.
 
