@@ -22,7 +22,7 @@ A Telegram blind-test bot built with n8n. Send it a Spotify playlist: it plays 3
 ## Setup
 
 ```bash
-git clone https://github.com/<your-username>/blindbeat.git
+git clone https://github.com/<Lara-Normand-Pro>/blindbeat.git
 cd blindbeat
 cp .env.example .env     # fill in your own values
 docker compose up -d
