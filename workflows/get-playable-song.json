@@ -1,0 +1,168 @@
+{
+  "name": "Get Playable Song",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "playlist_id"
+            },
+            {
+              "name": "exclude"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ab4b1eab-3492-49f1-8f90-aceaa098b5a9",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "resource": "playlist",
+        "operation": "getTracks",
+        "id": "={{ $json.playlist_id }}",
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "fcdc2af3-a908-4162-b962-188fdb4d2e8f",
+      "name": "Get Playlist Tracks",
+      "retryOnFail": true,
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "yC0TNz4RouQIeWwp",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const clean = s => s.toLowerCase()\n  .replace(/\\s*[\\(\\[].*?[\\)\\]]/g, '')\n  .replace(/\\s+-\\s+.*$/, '')\n  .trim();\nconst excluded = String($('When Executed by Another Workflow').first().json.exclude || '')\n  .split('|').filter(Boolean);\n\nconst tracks = $input.all()\n  .map(i => i.json.track || i.json)\n  .filter(t => t && t.name && t.artists);\n\nlet pool = tracks.filter(t => !excluded.includes(t.name));\nif (pool.length < 3) pool = tracks;   // whole playlist played → start over\n\nconst picks = pool.sort(() => Math.random() - 0.5).slice(0, 3);\nreturn picks.map(t => ({ json: {\n  title: t.name,\n  artist: t.artists[0].name,\n  answer: clean(t.name),\n  year: t.album && t.album.release_date ? Number(t.album.release_date.slice(0, 4)) : null\n}}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "13edecc4-a02a-4daf-826d-9b4b2a2e9780",
+      "name": "Pick 3 Tracks"
+    },
+    {
+      "parameters": {
+        "url": "https://api.deezer.com/search",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "q",
+              "value": "={{ $json.artist }} {{ $json.answer }}"
+            },
+            {
+              "name": "limit",
+              "value": "3"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        672,
+        0
+      ],
+      "id": "9c3f2c5e-4e79-4e28-837d-ece9d1e9fc58",
+      "name": "Deezer",
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const picks = $('Pick 3 Tracks').all();\nconst results = $input.all();\nfor (let i = 0; i < results.length; i++) {\n  const hit = (results[i].json.data || [])[0];\n  if (hit && hit.preview) {\n    return [{ json: {\n      found: true,\n      ...picks[i].json,\n      preview: hit.preview,\n      album_id: hit.album ? hit.album.id : null,\n      cover: hit.album ? hit.album.cover_big : null\n    }}];\n  }\n}\nreturn [{ json: { found: false } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        0
+      ],
+      "id": "45b9eb69-6234-4a52-a540-8718c3833cfb",
+      "name": "Choose Playable"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Get Playlist Tracks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Playlist Tracks": {
+      "main": [
+        [
+          {
+            "node": "Pick 3 Tracks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick 3 Tracks": {
+      "main": [
+        [
+          {
+            "node": "Deezer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deezer": {
+      "main": [
+        [
+          {
+            "node": "Choose Playable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "errorWorkflow": "TH5TcQ8XMO4OM3sf",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "d27c7aad-0c8c-4a44-af05-eb3a386b2714",
+  "meta": {
+    "instanceId": "e925afa9d9db6fe238199051f8b87083607cbe5fa9963d6149ea8bddca566c2e"
+  },
+  "nodeGroups": [],
+  "id": "ZTo2K73LF48M8JlD",
+  "tags": []
+}
