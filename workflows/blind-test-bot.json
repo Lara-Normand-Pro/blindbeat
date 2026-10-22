@@ -1627,6 +1627,7 @@
       "id": "e3c029cf-4c46-492e-80b7-2317848c30ef",
       "name": "Read Game",
       "alwaysOutputData": true,
+      "retryOnFail": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "tzSfe96VDYLSZUvR",
@@ -2351,7 +2352,40 @@
       "name": "Sticky Note5"
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "Telegram Trigger": [
+      {
+        "json": {
+          "update_id": 370823956,
+          "message": {
+            "message_id": 680,
+            "from": {
+              "id": 8958650564,
+              "is_bot": false,
+              "first_name": "Lara",
+              "last_name": "Normand",
+              "language_code": "en"
+            },
+            "chat": {
+              "id": -5421094941,
+              "title": "Blind Test",
+              "type": "group",
+              "all_members_are_administrators": false
+            },
+            "date": 1792671551,
+            "text": "/playlist uhzaabcqaeùa",
+            "entities": [
+              {
+                "offset": 0,
+                "length": 9,
+                "type": "bot_command"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
   "connections": {
     "Telegram Trigger": {
       "main": [
@@ -2924,7 +2958,7 @@
     "callerPolicy": "workflowsFromSameOwner",
     "availableInMCP": false
   },
-  "versionId": "ffdc122b-be04-4ab3-8a3c-339d4fcd3a96",
+  "versionId": "9028ad2a-a626-4874-8c4f-fe9d9ecea54c",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "e925afa9d9db6fe238199051f8b87083607cbe5fa9963d6149ea8bddca566c2e"
