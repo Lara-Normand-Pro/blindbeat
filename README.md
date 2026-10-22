@@ -42,6 +42,9 @@ Send `/start` to the bot → tap **Guess the title** → send a guess → `/scor
 Other commands: `/year`, `/who`, `/mine <link>`, `/playlist <link>`, `/skip`, `/help`.
 
 Data survives a restart: `docker compose down` then `docker compose up -d`.
+## Screenshots
 
+![Telegram game](docs/telegram.png)
+![Execution in n8n](docs/executions.png)
 ---
 Lara Normand · No-code software development · ESSEC
