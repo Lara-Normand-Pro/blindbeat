@@ -15,7 +15,7 @@
     {
       "parameters": {
         "chatId": "8958650564",
-        "text": "={{ \"🚨 \" + $json.workflow.name + \" failed\\nNode: \" + $json.execution.lastNodeExecuted + \"\\nError: \" + $json.execution.error.message }}",
+        "text": "={{ \"🚨 \" + $json.workflow.name + \" failed\\nNode: \" + $json.execution.lastNodeExecuted + \"\\nError: \" + $json.execution.error.message + \"\\nExecution: \" + $json.execution.url }}",
         "additionalFields": {
           "appendAttribution": false
         }
@@ -29,6 +29,7 @@
       "id": "a6f3d54b-6d4a-4ac5-8c81-d12101e412e4",
       "name": "Send a text message",
       "webhookId": "6aafe599-25b5-4e66-9f97-49bbb6ac85af",
+      "retryOnFail": true,
       "credentials": {
         "telegramApi": {
           "id": "yuUjYxlRyDvq3shV",
@@ -56,7 +57,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "888bb0e4-fddd-4a1c-8e8f-ad9fc3029662",
+  "versionId": "ab3b07d9-1bed-4b12-a873-3afaf5efdd83",
   "meta": {
     "instanceId": "e925afa9d9db6fe238199051f8b87083607cbe5fa9963d6149ea8bddca566c2e"
   },
